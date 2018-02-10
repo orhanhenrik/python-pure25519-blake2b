@@ -164,7 +164,7 @@ def random_scalar(entropy_f): # 0..L-1 inclusive
     return oversized % L
 
 def password_to_scalar(pw):
-    oversized = hashlib.sha512(pw).digest()
+    oversized = hashlib.blake2b(pw).digest()
     return int(binascii.hexlify(oversized), 16) % L
 
 def scalar_to_bytes(y):
@@ -268,7 +268,7 @@ _zero_bytes = Zero.to_bytes()
 
 def arbitrary_element(seed): # unknown DL
     # TODO: if we don't need uniformity, maybe use just sha256 here?
-    hseed = hashlib.sha512(seed).digest()
+    hseed = hashlib.blake2b(seed).digest()
     y = int(binascii.hexlify(hseed), 16) % Q
 
     # we try successive Y values until we find a valid point

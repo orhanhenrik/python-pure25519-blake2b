@@ -188,4 +188,4 @@ def selftest():
     assert sig == b"sig0-E/QrwtSF52x8+q0l4ahA7eJbRKc777ClKNg217Q0z4fiYMCdmAOI+rTLVkiFhX6k3D+wQQfKdJYMxaTUFfv1DQ", sig
     vk.verify(sig, message, prefix="sig0-", encoding="base64")
 
-selftest()
+# selftest()

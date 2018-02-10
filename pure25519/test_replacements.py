@@ -19,7 +19,7 @@ else:
 
 b = 256 # =32*8
 def H(m):
-    return hashlib.sha512(m).digest()
+    return hashlib.blake2b(m).digest()
 
 class Compare(unittest.TestCase):
     # I want to replace some very manual (and slow) loops with builtins.

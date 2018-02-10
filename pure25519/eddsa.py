@@ -5,7 +5,7 @@ from pure25519.basic import (bytes_to_clamped_scalar,
 import hashlib, binascii
 
 def H(m):
-    return hashlib.sha512(m).digest()
+    return hashlib.blake2b(m).digest()
 
 def publickey(seed):
     # turn first half of SHA512(seed) into scalar, then into point
