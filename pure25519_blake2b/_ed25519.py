@@ -1,6 +1,6 @@
 from . import eddsa
 
-# adapt pure25519/ed25519.py to behave like (C/glue) ed25519/_ed25519.py, so
+# adapt pure25519_blake2b/ed25519.py to behave like (C/glue) ed25519/_ed25519.py, so
 # ed25519_oop.py doesn't have to change
 
 # ed25519 secret/private/signing keys can be built from a 32-byte random seed
@@ -25,7 +25,7 @@ from . import eddsa
 #  sig+msg = sign(msg, seed+vk)
 #  msg = open(sig+msg, vk) # or raise BadSignatureError
 
-# pure25519/ed25519.py provides:
+# pure25519_blake2b/ed25519.py provides:
 #  vk = publickey(sk)
 #  sig = signature(msg, sk or sk+vk, vk)
 #  bool = checkvalid(sig, msg, vk)

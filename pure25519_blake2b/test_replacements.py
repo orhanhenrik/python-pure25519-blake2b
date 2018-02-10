@@ -3,7 +3,7 @@ import sys
 import unittest
 from binascii import hexlify, unhexlify
 import hashlib
-from pure25519 import basic
+from pure25519_blake2b import basic
 
 if sys.version_info[0] == 2:
     def asbytes(b):

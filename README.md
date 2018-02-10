@@ -1,4 +1,4 @@
-# python-pure25519
+# python-pure25519_blake2b
 
 This contains a collection of pure-python functions to implement Curve25519-based cryptography, including:
 
@@ -24,7 +24,7 @@ Good things about this module:
 
 The pure-python functions are considerably slower than their pynacl (libsodium) equivalents, using python-2.7.9 on my 2.6GHz Core-i7:
 
-| function       | pure25519 | pynacl (C) |
+| function       | pure25519_blake2b | pynacl (C) |
 | -------------- | --------- | ---------- |
 | Ed25519 sign   |    2.8 ms |     142 us |
 | Ed25519 verify |   10.8 ms |     240 us |

@@ -1,4 +1,4 @@
-from pure25519.basic import random_scalar, Base, bytes_to_element
+from pure25519_blake2b.basic import random_scalar, Base, bytes_to_element
 from hashlib import sha256
 
 # In practice, you should use the Curve25519 function, which is better in

@@ -1,7 +1,7 @@
 import os, unittest
 from binascii import hexlify
-from pure25519.basic import encodepoint
-from pure25519.dh import dh_start, dh_finish
+from pure25519_blake2b.basic import encodepoint
+from pure25519_blake2b.dh import dh_start, dh_finish
 
 class DH(unittest.TestCase):
     def assertElementsEqual(self, e1, e2):

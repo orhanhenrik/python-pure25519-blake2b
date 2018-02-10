@@ -1,13 +1,13 @@
 import unittest
 import random
 from binascii import hexlify
-from pure25519.basic import (Q, L, B, ElementOfUnknownGroup,
+from pure25519_blake2b.basic import (Q, L, B, ElementOfUnknownGroup,
                              arbitrary_element, password_to_scalar,
                              bytes_to_element, bytes_to_unknown_group_element,
                              _add_elements_nonunfied, add_elements, encodepoint,
                              xform_extended_to_affine, xform_affine_to_extended)
-from pure25519.basic import Base, Element, Zero
-from pure25519.slow_basic import (slow_add_affine, scalarmult_affine,
+from pure25519_blake2b.basic import Base, Element, Zero
+from pure25519_blake2b.slow_basic import (slow_add_affine, scalarmult_affine,
                                   scalarmult_affine_to_extended)
 
 class Basic(unittest.TestCase):

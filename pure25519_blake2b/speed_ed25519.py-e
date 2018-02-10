@@ -26,7 +26,7 @@ def p(name, setup_statements, statements):
                              " ".join([abbrev(s) for s in t])))
 
 def run():
-    S1 = "from pure25519 import ed25519_oop; msg=b'hello world'"
+    S1 = "from pure25519_blake2b import ed25519_oop; msg=b'hello world'"
     S2 = "sk,vk = ed25519_oop.create_keypair()"
     S3 = "sig = sk.sign(msg)"
     S4 = "vk.verify(sig, msg)"
@@ -36,7 +36,7 @@ def run():
     p("sign", [S1, S2], S3)
     p("verify", [S1, S2, S3], S4)
 
-    S5 = "from pure25519 import eddsa"
+    S5 = "from pure25519_blake2b import eddsa"
     S6 = "h=eddsa.Hint(b'')"
     S7 = "eddsa.checkvalid(sig, msg, vk.vk_s)"
 

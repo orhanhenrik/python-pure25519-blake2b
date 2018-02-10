@@ -12,7 +12,7 @@ class Test(Command):
     def finalize_options(self):
         pass
     def run(self):
-        test = unittest.defaultTestLoader.discover("pure25519")
+        test = unittest.defaultTestLoader.discover("pure25519_blake2b")
         runner = unittest.TextTestRunner(verbosity=2)
         result = runner.run(test)
         sys.exit(not result.wasSuccessful())
@@ -20,7 +20,7 @@ class Test(Command):
 class KnownAnswerTest(Test):
     description = "run known-answer-tests"
     def run(self):
-        test = unittest.defaultTestLoader.loadTestsFromName("pure25519.do_ed25519_kat")
+        test = unittest.defaultTestLoader.loadTestsFromName("pure25519_blake2b.do_ed25519_kat")
         runner = unittest.TextTestRunner(verbosity=2)
         result = runner.run(test)
         sys.exit(not result.wasSuccessful())
@@ -28,20 +28,20 @@ class KnownAnswerTest(Test):
 class Speed(Test):
     description = "run benchmark suite"
     def run(self):
-        from pure25519 import speed_basic, speed_ed25519, speed_dh, speed_spake2
+        from pure25519_blake2b import speed_basic, speed_ed25519, speed_dh, speed_spake2
         speed_basic.run()
         speed_ed25519.run()
         speed_dh.run()
         speed_spake2.run()
 
-setup(name="pure25519",
+setup(name="pure25519_blake2b",
       version="0", # not for publication
       description="pure-python curve25519/ed25519 routines",
       author="Brian Warner",
-      author_email="warner-python-pure25519@lothar.com",
+      author_email="warner-python-pure25519_blake2b@lothar.com",
       license="MIT",
-      url="https://github.com/warner/python-pure25519",
-      packages=["pure25519"],
-      package_dir={"pure25519": "pure25519"},
+      url="https://github.com/warner/python-pure25519_blake2b",
+      packages=["pure25519_blake2b"],
+      package_dir={"pure25519_blake2b": "pure25519_blake2b"},
       cmdclass={"test": Test, "speed": Speed, "test_kat": KnownAnswerTest},
       )

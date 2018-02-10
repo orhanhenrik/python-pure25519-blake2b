@@ -1,14 +1,14 @@
 from __future__ import print_function
 import unittest
 from binascii import hexlify, unhexlify
-from pure25519.ed25519_oop import SigningKey, VerifyingKey
+from pure25519_blake2b.ed25519_oop import SigningKey, VerifyingKey
 
 class KnownAnswerTests(unittest.TestCase):
     def test_all(self):
         # kat-ed25519.txt comes from "sign.input" on ed25519.cr.yp.to . The
         # pure-python ed25519.py in the same distribution uses a very
         # different key format than the one used by NaCl.
-        lines = list(open("pure25519/kat-ed25519.txt"))
+        lines = list(open("pure25519_blake2b/kat-ed25519.txt"))
         for i,line in enumerate(lines):
             if not i%50: print("%d/%d" % (i, len(lines)))
             x = line.split(":")

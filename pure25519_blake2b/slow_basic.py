@@ -1,5 +1,5 @@
 
-from pure25519.basic import (inv, d, Q, L,
+from pure25519_blake2b.basic import (inv, d, Q, L,
                              xform_extended_to_affine,
                              scalarmult_element,
                              xform_affine_to_extended,

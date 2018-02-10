@@ -30,7 +30,7 @@ def p(name, setup_statements, statements):
 # pure_ed25519.sign() is doing an extra publickey(), doubles the cost
 
 def run():
-    S1 = "from pure25519 import basic, slow_basic"
+    S1 = "from pure25519_blake2b import basic, slow_basic"
     S2 = "p=slow_basic.scalarmult_affine(basic.B, 16*1000000000)"
     S3 = "P=basic.encodepoint(p)"
     S4 = "basic.decodepoint(P)"

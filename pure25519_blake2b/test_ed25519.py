@@ -3,8 +3,8 @@ import sys
 import unittest
 import time
 from binascii import hexlify, unhexlify
-from pure25519 import ed25519_oop as ed25519
-from pure25519 import _ed25519 as raw
+from pure25519_blake2b import ed25519_oop as ed25519
+from pure25519_blake2b import _ed25519 as raw
 
 if sys.version_info[0] == 3:
     def int2byte(i):
